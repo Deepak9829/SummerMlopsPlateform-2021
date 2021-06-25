@@ -1,0 +1,205 @@
+<html> 
+<head>
+  </head>
+
+<div id="doc">
+
+<img width="100" height="100" border="5" alt="Deepu Bhai" usemap="#workmap" src="https://raw.githubusercontent.com/Deepak9829/IMAGES/master/large_v-trans.png"> </img>
+
+</div>
+<style type="text/css">
+
+  img {
+       
+  border-radius: 30px;
+}
+
+</style>
+<style>
+
+div#doc {
+  width: 1px;
+  height: 1px;
+  color: deepskyblue;
+  position: relative;
+  animation-name: example;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  
+}
+
+@keyframes example {
+  /*
+  0%   {background-color:red; left:0px; top:0px;}
+  100%  {background-color:yellow; left:1360px; top:0px;}
+  */
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:1240px; top:0px;}
+  50%  {background-color:blue; left:1240px; top:565px;}
+  75%  {background-color:green; left:0px; top:565px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+
+</style>
+
+
+
+
+<style>
+
+body {
+
+ background-image: url("https://raw.githubusercontent.com/Deepak9829/IMAGES/master/cool-background%20(1).png");
+ background-color: #cccccc;
+
+}
+</style>
+<style>
+input[type=text], select {
+  width: 50%;
+  padding: 15px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: content-box;
+}
+
+input[type=submit] {
+  width: 25%;
+  height: 13%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  top: 24%;
+  left: 9%;
+}
+
+div {
+
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 0px;
+ 
+ 
+
+}
+
+
+</style>
+<body>
+
+
+
+
+
+<center>
+<div id="form">
+   
+  <form id="first" action="http://192.168.43.140/cgi-bin/drun.py">
+    
+    <h1> Control Docker Server</h1>
+    <br>
+    
+    <label for="fname"></label>
+    <input type="text" id="fname" name="osname" placeholder="cmd..">
+    
+    <br>
+    <label for="fname"></label>
+    <select id="image" name="imagename">
+      <option value="centos:latest">Centos:latest</option>
+      <option value="centos:7">Centos:7</option>
+      <option value="ubuntu:latest">Ubuntu:latest</option>
+      <option value="ubuntu:20">Ubuntu:20</option>
+      <option value="fedora:latest">Fedora:latest</option>
+      <option value="ubuntu:18">Ubuntu:18</option>
+    </select>
+    <br>
+    <input type="submit" value="Submit">
+  
+    
+
+  </form>
+</div>
+</center>
+<style>
+div#new {
+  left: 37%;
+  background-color: black;
+  
+}
+</style>
+<center>
+  <pre>
+<div id="new" class="display"> 
+<img src="https://raw.githubusercontent.com/Deepak9829/IMAGES/master/large_v-trans.png" width="100%" height="100%">
+</div>
+</pre>
+
+
+</center>
+
+
+<style>
+div#new1 {
+  left: 65%;
+  background-color: white;
+  color: black;
+}
+</style>
+<center>
+<div id="new1">
+<h1>Docker Containers Management</h1>
+<form id="second" action="http://192.168.43.140/cgi-bin/info.py">
+<br>
+<br>
+  <select id="dockerinfo" name="info">
+      
+      <option value="docker ps">See Running Containers</option>
+      <option value="docker ps -a">See Docker Stoped Containers</option>
+      <option value="docker images">See Docker Images</option>
+      
+      
+      
+    </select>
+    <br>
+    <input  type="submit" value="Submit">
+  </form>
+
+</div>
+</center>
+
+<script>
+  /*
+  function lw(){
+
+    var i = document.getElementById("dockerinfo").value
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://192.168.43.140/cgi-bin/info.py?info="+i, true)
+    xnr.send();
+    xhr.onload() = function(){
+      var output = xhr.responseText;
+      document.getElementById("new").innerHTML = output;
+    }
+  }
+  */
+</script>
+</body>
+
+</html>
