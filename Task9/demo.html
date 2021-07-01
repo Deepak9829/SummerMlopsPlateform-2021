@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Alegreya Sans SC' rel='stylesheet'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+/*
+#background {
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
+    left: 0px; 
+    top: 0px; 
+    z-index: 0;
+}
+
+.stretch {
+  min-width:100%; min-height:100%; width:auto; height:auto;
+}
+*/
+body {
+  /*background-image: url("https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  background-color: #cccccc;*/
+  /*background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdhF625W7iRJI73AswDMtosXVlvkcVaMc85nmcjw6IRTqHzSW0tpbyD2YChBFxYO9OOec&usqp=CAU");
+    -moz-background-size: cover;
+    -o-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%; 
+    background-size: 100% 100%;*/
+  background-color: #cccccc;
+  
+  /*background-color: #E8CEBF;*/
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  margin-left: 10px;
+  margin-right: 10px;
+  float: left;
+  width: 25%;
+  padding: 15px 10px;
+}
+
+
+/* Remove extra left and right margins, due to padding */
+/*.row {margin: 0 -5px;}*/
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.603);
+  border-radius: 8px;
+  padding: 16px;
+  height: 200px;
+  text-align: center;
+  /*background-color: #f1f1f1;*/
+  /*background-color:  #007CC7;*/
+  background-color: #4DA8DA;
+}
+
+.card:hover{
+  background-color: #54778b;
+  cursor: pointer;
+}
+.inside {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 30px; font-weight: bold;
+}
+
+.num {
+  margin-top: 50px; font-size: x-large; font-weight:500;
+}
+</style>
+</head>
+<body>
+
+
+<p style="text-align: center; font-size: 40px; color:midnightblue; font-family: 'Alegreya Sans SC';font-size: 60px;font-weight: 550;">Kube Controller</h2>
+<!--<p style="text-align: center;">Do Everything on Kubernetes with a click</p> -->
+
+<div class="row">
+  <div class="column">
+    <div class="card" onclick="nav('pod')">
+      <p class="inside">Pods</p>
+      <p id="pod" class="num">Some text</p>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card" onclick="nav('deploy')">
+      <p class="inside">Deployment</p>
+      <p id = "deploy" class="num">0</p>
+      
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card" onclick="nav('svc')">
+      <p class="inside">Services</p>
+      <p id="svc" class="num">Some text</p>
+    </div>
+  </div>
+  
+  
+  </div>
+</div>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <p class="inside">PVC</p>
+      <p id="pvc" class="num">Some text</p>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card" onclick="nav('rs')">
+      <p class="inside">Replica Set</p>
+      <p id="rs" class="num">0</p>
+      
+    </div>
+  </div>
+  
+
+</div>
+</body>
+
+<script>
+  function nav(path){
+    document.location = "file:///C:/Users/juzer/Desktop/summerprogram/Web/Task9/" + path + ".html";
+  }
+  /*fetch("http://192.168.1.2/cgi-bin/try.py")
+  .then(response =>  {
+     return response.json.;
+  }).then(op => {
+    return document.write(op)
+  })*/
+  //function ju(){
+  
+    var request = new XMLHttpRequest()
+
+request.open('GET', "http://35.154.159.248/cgi-bin/kubedemo.py?verb=juzer", true)
+request.onload = function () {
+  // Begin accessing JSON data here
+  var data = JSON.parse(this.response)
+
+  if (request.status >= 200 && request.status < 400) {
+    document.getElementById("pod").innerHTML = data["pod"]
+    document.getElementById("deploy").innerHTML = data["deploy"]
+    document.getElementById("svc").innerHTML = data["svc"]
+    document.getElementById("pvc").innerHTML = data["pvc"]
+    document.getElementById("rs").innerHTML = data["rs"]
+  } else {
+    console.log('error')
+  }
+}
+
+request.send()
+
+
+
+//}
+</script>
+
+</html>
